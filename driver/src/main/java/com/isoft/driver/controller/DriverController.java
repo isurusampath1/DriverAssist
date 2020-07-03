@@ -15,10 +15,10 @@ public class DriverController {
     @Autowired
     private DriverService driverService;
 
-    // Method to get all the drivers
-    @RequestMapping(value = "/drivers", method = RequestMethod.GET)
-    public List<Role> getAllDrivers(){
-        return driverService.getAllDrivers();
+    // Method to get all
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public List<Role> getAllUsers(){
+        return driverService.getAll();
     }
 
     //Get a specific driver according to his NIC number
@@ -41,7 +41,7 @@ public class DriverController {
 
     //Can delete the drivers
     @RequestMapping(value = "/driver/{nic}" , method = RequestMethod.DELETE)
-    public void deleteDriver(String nic){
+    public void deleteDriver(@PathVariable String nic){
         driverService.deleteDriver(nic);
     }
 
@@ -51,10 +51,5 @@ public class DriverController {
         return driverService.getDriverByOrganization(organization);
     }
 
-    //get All
-    @RequestMapping(value = "/driver/getall")
-    public List<Role> getAll(){
-        return driverService.getAll();
-    }
 
 }

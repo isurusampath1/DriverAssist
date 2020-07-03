@@ -16,14 +16,14 @@ public class DriverService {
     @Autowired
     private DriverRepository driverRepository;
 
-    //Get all the drivers
-    public List<Role> getAllDrivers(){
+    //Get all
+    public List<Role> getAll(){
 
-        List<Role> drivers = new ArrayList<>();
+        List<Role> all = new ArrayList<>();
         driverRepository.findAll()
-        .forEach (drivers::add);
+        .forEach (all::add);
 
-        return drivers;
+        return all;
     }
 
     //Add new driver to an Organization
@@ -51,8 +51,5 @@ public class DriverService {
         return driverRepository.findByOrganization(organization);
     }
 
-    //Get all the users.
-    public List<Role> getAll(){
-        return driverRepository.getAll();
-    }
+
 }

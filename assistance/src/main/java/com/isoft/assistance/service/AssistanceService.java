@@ -16,14 +16,14 @@ public class AssistanceService {
     @Autowired
     private AssistanceRepository assistanceRepository;
 
-    //Get All the assistance
-    public List<Role> getAllAssistance(){
+    //Get All
+    public List<Role> getAll(){
 
-        List<Role> assistance = new ArrayList<>();
+        List<Role> all = new ArrayList<>();
         assistanceRepository.findAll()
-                .forEach (assistance::add);
+                .forEach (all::add);
 
-        return assistance;
+        return all;
     }
 
     //Add new assistance to the system

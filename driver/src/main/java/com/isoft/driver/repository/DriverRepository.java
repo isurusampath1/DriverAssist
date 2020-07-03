@@ -15,9 +15,7 @@ public interface DriverRepository extends CrudRepository<Role, String>{
     public List<Role> findByOrganization(String organization);
 
 
-    //Custom query to filter drivers according to their organization
-    @Query(value = "SELECT * FROM role ", nativeQuery = true)
-    public List<Role> getAll();
+
 
 
 

@@ -15,10 +15,10 @@ public class AssistanceController {
     @Autowired
     private AssistanceService assistanceService;
 
-    //Get all the assistance
-    @RequestMapping(value = "/assistance", method = RequestMethod.GET)
-    public List<Role> getAllAssistance(){
-        return assistanceService.getAllAssistance();
+    //Get all the users
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public List<Role> getAll(){
+        return assistanceService.getAll();
     }
 
     //Get a particular assistance by nic
@@ -41,7 +41,7 @@ public class AssistanceController {
 
     //Delete an assistance
     @RequestMapping(value = "/assistance/{nic}" , method = RequestMethod.DELETE)
-    public void deleteAssistance(String nic){
+    public void deleteAssistance(@PathVariable String nic){
         assistanceService.deleteAssistance(nic);
     }
 
