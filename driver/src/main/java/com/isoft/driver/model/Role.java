@@ -3,9 +3,12 @@ package com.isoft.driver.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+// Model class for the Driver/Assistance.
+
 @Entity
 public class Role {
 
+    // field initialization
     @Id
     private String  nic;
     private String firstName;
@@ -13,9 +16,11 @@ public class Role {
     private String organization;
     private String roleType;
 
+    //Default Constructor.
     public Role() {
     }
 
+    //Constructor with parameters.
     public Role(String nic, String firstName, String lastName, String organization, String roleType) {
         this.nic = nic;
         this.firstName = firstName;
